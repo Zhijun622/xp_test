@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f8edf0">
+  <meta name="description" content="25道生活化情景题，测测你的互动偏好。仅供娱乐。">
+  <title>测测你的 XP｜拉拉专属</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+  <main class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="./" aria-label="返回首页"><span class="brand-mark">♡</span><span>心动观察室</span></a>
+      <span class="top-note">A LITTLE QUIZ FOR YOU</span>
+    </header>
+
+    <section id="start-screen" class="screen start-screen">
+      <div class="eyebrow"><span class="eyebrow-line"></span> SELF DISCOVERY · FOR FUN <span class="eyebrow-line"></span></div>
+      <div class="hero-art" aria-hidden="true">
+        <span class="orbit orbit-a"></span><span class="orbit orbit-b"></span>
+        <span class="hero-heart">♡</span><span class="spark spark-a">✦</span><span class="spark spark-b">✧</span>
+      </div>
+      <p class="kicker">25 个日常瞬间，认识不一样的自己</p>
+      <h1>测测你的 <em>XP</em></h1>
+      <p class="hero-copy">从一场临时取消的约会，到一个不经意的眼神。<br>选择最自然的反应，看看你在亲密关系里的互动倾向。</p>
+      <div class="start-meta">
+        <span><i>✦</i> 25 道情景题</span><span><i>◷</i> 约 3–5 分钟</span><span><i>♡</i> 11 种结果</span>
+      </div>
+      <button id="start-btn" class="primary-btn">开始测试 <span>→</span></button>
+      <p class="disclaimer">仅供娱乐与自我观察，不构成心理测评或关系建议</p>
+    </section>
+
+    <section id="quiz-screen" class="screen quiz-screen hidden" aria-live="polite">
+      <div class="quiz-heading">
+        <div><p class="kicker">YOUR LITTLE MOMENTS</p><h2>凭直觉，选择最像你的反应</h2></div>
+        <span class="question-counter"><strong id="current-number">01</strong><small> / 25</small></span>
+      </div>
+      <div class="progress-track"><div id="progress-fill" class="progress-fill"></div></div>
+      <div class="progress-caption"><span>正在了解你的互动偏好</span><span id="progress-percent">4%</span></div>
+      <article class="question-card">
+        <div class="question-label"><span class="question-index" id="question-index">QUESTION 01</span><span class="question-decoration">✧</span></div>
+        <h3 id="question-title"></h3>
+        <p class="choose-hint">选好后会自动进入下一题，不用再点下一步。</p>
+        <div id="options-list" class="options-list"></div>
+      </article>
+      <div class="quiz-footer">
+        <button id="prev-btn" class="text-btn" disabled>← 上一题</button>
+        <span class="autosave-note">你的选择仅在本次页面中使用 · 选择后自动跳转</span>
+      </div>
+    </section>
+
+    <section id="result-screen" class="screen result-screen hidden">
+      <div class="result-topline"><span class="eyebrow-line"></span> YOUR RESULT <span class="eyebrow-line"></span></div>
+      <div class="result-symbol" aria-hidden="true">✧</div>
+      <p class="kicker">你的互动偏好画像</p>
+      <h2 id="result-title"></h2>
+      <p id="result-tag" class="result-tag"></p>
+      <div class="result-description-wrap">
+        <p id="result-summary" class="result-summary"></p>
+      </div>
+
+      <section class="match-panel" aria-label="更适配什么样的人">
+        <div class="panel-heading">
+          <p class="kicker">BEST MATCH FOR YOU</p>
+          <h3>更适配什么样的人</h3>
+        </div>
+        <p class="match-name" id="match-name"></p>
+        <p class="match-line" id="match-line"></p>
+        <p class="match-desc" id="match-desc"></p>
+      </section>
+
+      <section class="score-panel">
+        <div class="score-heading"><div><p class="kicker">YOUR ANSWER PATTERN</p><h3>你的选择分布</h3></div><span>共 25 题</span></div>
+        <div id="score-bars" class="score-bars"></div>
+        <p class="score-explain" id="score-explain"></p>
+      </section>
+
+      <section class="partner-panel" aria-label="假设我的对象是">
+        <div class="panel-heading">
+          <p class="kicker">IF SHE WERE…</p>
+          <h3>假设我的对象是</h3>
+        </div>
+        <p class="partner-hint">点选一种结果类型，看看你们碰在一起会怎样。可以随时换，多试几种。</p>
+        <div id="partner-picker" class="partner-picker" role="listbox" aria-label="选择对象的结果类型"></div>
+        <div id="partner-chemistry" class="partner-chemistry hidden">
+          <div class="chemistry-pair">
+            <span class="chemistry-you"><small>你</small><strong id="chem-you"></strong></span>
+            <span class="chemistry-x" aria-hidden="true">×</span>
+            <span class="chemistry-her"><small>她</small><strong id="chem-her"></strong></span>
+          </div>
+          <p class="chemistry-title" id="chem-title"></p>
+          <p class="chemistry-desc" id="chem-desc"></p>
+        </div>
+        <p id="partner-empty" class="partner-empty">还没有选择——点上面任意一种类型开始看互动。</p>
+      </section>
+
+      <p class="result-footnote">这不是固定的人格标签。不同的人、不同的关系阶段，都可能让你呈现不同的一面。</p>
+      <div class="result-actions">
+        <button id="share-btn" class="primary-btn">分享我的结果 <span>↗</span></button>
+        <button id="restart-btn" class="secondary-btn">再测一次</button>
+      </div>
+      <p id="share-feedback" class="share-feedback" role="status"></p>
+    </section>
+
+    <footer class="site-footer"><span>♡</span> MADE FOR A LITTLE SELF-DISCOVERY <span>♡</span></footer>
+  </main>
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
